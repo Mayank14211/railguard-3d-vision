@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Bell, Settings, User, BarChart2, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Badge } from "@/components/ui/badge";
 
 type NavItem = {
   name: string;

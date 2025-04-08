@@ -31,18 +31,21 @@ const TrainCabin = ({
   useFrame((state) => {
     if (!meshRef.current) return;
     
+    // Ensure we're working with MeshStandardMaterial
+    const material = meshRef.current.material as THREE.MeshStandardMaterial;
+    
     if (alertLevel > 0) {
       const intensity = Math.sin(state.clock.getElapsedTime() * (alertLevel === 2 ? 5 : 2)) * 0.2 + 0.8;
-      meshRef.current.material.opacity = intensity;
+      material.opacity = intensity;
       
       // Make red alerts more intense
       if (alertLevel === 2) {
         const pulseColor = baseColor.clone().multiplyScalar(intensity);
-        meshRef.current.material.color = hovered ? hoverColor : pulseColor;
+        material.color = hovered ? hoverColor : pulseColor;
       }
     } else {
-      meshRef.current.material.opacity = hovered ? 0.9 : 0.6;
-      meshRef.current.material.color = hovered ? hoverColor : baseColor;
+      material.opacity = hovered ? 0.9 : 0.6;
+      material.color = hovered ? hoverColor : baseColor;
     }
   });
 

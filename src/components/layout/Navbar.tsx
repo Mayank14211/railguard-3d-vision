@@ -73,8 +73,8 @@ const Navbar = () => {
                       {item.name}
                       {item.notifications && (
                         <Badge 
-                          className="ml-1.5 bg-theme-red text-white h-5 min-w-5 flex items-center justify-center rounded-full" 
                           variant="outline"
+                          className="ml-1.5 bg-theme-red text-white h-5 min-w-5 flex items-center justify-center rounded-full"
                         >
                           {item.notifications}
                         </Badge>
@@ -119,8 +119,8 @@ const Navbar = () => {
                 {item.name}
                 {item.notifications && (
                   <Badge 
-                    className="ml-2 bg-theme-red text-white" 
                     variant="outline"
+                    className="ml-2 bg-theme-red text-white"
                   >
                     {item.notifications}
                   </Badge>

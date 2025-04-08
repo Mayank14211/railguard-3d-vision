@@ -72,12 +72,9 @@ const Navbar = () => {
                       <item.icon className="h-4 w-4 mr-1.5" />
                       {item.name}
                       {item.notifications && (
-                        <Badge 
-                          variant="outline"
-                          className="ml-1.5 bg-theme-red text-white h-5 min-w-5 flex items-center justify-center rounded-full"
-                        >
+                        <span className="ml-1.5 bg-theme-red text-white h-5 min-w-5 flex items-center justify-center rounded-full text-xs px-1.5">
                           {item.notifications}
-                        </Badge>
+                        </span>
                       )}
                     </Link>
                   );
@@ -118,12 +115,9 @@ const Navbar = () => {
                 <item.icon className="h-5 w-5 mr-2" />
                 {item.name}
                 {item.notifications && (
-                  <Badge 
-                    variant="outline"
-                    className="ml-2 bg-theme-red text-white"
-                  >
+                  <span className="ml-2 bg-theme-red text-white text-xs px-1.5 py-0.5 rounded-full">
                     {item.notifications}
-                  </Badge>
+                  </span>
                 )}
               </Link>
             );

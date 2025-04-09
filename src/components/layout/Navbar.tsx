@@ -67,6 +67,7 @@ const Navbar = () => {
                           ? "text-white bg-theme-blue/20 glow-effect" 
                           : "text-gray-300 hover:text-white hover:bg-theme-blue/10"
                       )}
+                      aria-current={isActive ? "page" : undefined}
                     >
                       <item.icon className="h-4 w-4 mr-1.5" />
                       {item.name}
@@ -87,6 +88,8 @@ const Navbar = () => {
             <button
               className="bg-theme-blue/20 text-theme-blue hover:bg-theme-blue/30 inline-flex items-center justify-center p-2 rounded-md focus:outline-none transition-colors"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label={mobileMenuOpen ? "Close Menu" : "Open Menu"}
+              aria-expanded={mobileMenuOpen}
             >
               {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -95,7 +98,7 @@ const Navbar = () => {
       </div>
 
       {/* Mobile menu */}
-      <div className={cn("md:hidden", mobileMenuOpen ? "block" : "hidden")}>
+      <div className={cn("md:hidden", mobileMenuOpen ? "block" : "hidden")} aria-label="Mobile navigation">
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-theme-darker border-b border-white/10">
           {navItems.map((item) => {
             const isActive = location.pathname === item.path;
@@ -110,6 +113,7 @@ const Navbar = () => {
                     : "text-gray-300 hover:text-white hover:bg-theme-blue/10"
                 )}
                 onClick={() => setMobileMenuOpen(false)}
+                aria-current={isActive ? "page" : undefined}
               >
                 <item.icon className="h-5 w-5 mr-2" />
                 {item.name}
